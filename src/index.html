@@ -5,5 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
   </head>
-  <body></body>
+  <body>
+    <section class="search-section">
+      <form action="#">
+        <input type="text" placeholder="Search for a city" />
+      </form>
+    </section>
+
+    <section class="current-weather-section">
+      <div class="weather-icon-container">
+        <img src="#" alt="" />
+      </div>
+      <div class="temp-data-container">
+        <h1 class="temp"></h1>
+        <p class="weather-condition"></p>
+      </div>
+      <div class="weather-data-container">
+        <div class="wind-container">
+          <img src="#" alt="wind-icon" />
+          <p class="wind-data"></p>
+          <p class="wind-label">Wind</p>
+        </div>
+        <div class="humidity-container">
+          <img src="#" alt="humidity-icon" />
+          <p class="humidity-data"></p>
+          <p class="humidity-label">Humidity</p>
+        </div>
+        <div class="rain-container">
+          <img src="#" alt="rain-icon" />
+          <p class="rain-data"></p>
+          <p class="rain-label">Rain</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="upcoming-weather-section">
+      <div class="day-container"></div>
+    </section>
+  </body>
 </html>
