@@ -74,3 +74,47 @@ form {
   background-color: white;
   color: black;
 }
+
+.weather-icon-container {
+  display: flex;
+  justify-content: center;
+}
+
+.weather-icon {
+  margin-top: 30px;
+  height: 18rem;
+  width: 21rem;
+  filter: drop-shadow(0 0px 100px rgba(255, 255, 255, 0.467));
+}
+
+.temp-data-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.temp {
+  color: white;
+  margin: 0;
+  font-size: 9rem;
+  font-family: "Archivo", sans-serif;
+  line-height: 0.5;
+  filter: drop-shadow(0 0px 100px rgba(255, 255, 255, 0.467));
+  margin-right: 20px;
+}
+
+.degree-symbol {
+  position: absolute;
+  font-size: 2.5rem;
+}
+
+.weather-condition {
+  color: #babfc3;
+  align-self: center;
+  margin: 0;
+  font-size: 2rem;
+  font-family: "Archivo", sans-serif;
+  margin-top: 25px;
+  margin-right: 20px;
+}
