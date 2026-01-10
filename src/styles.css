@@ -1,9 +1,76 @@
 html,
 body {
-  background-color: rgb(27, 26, 26);
+  background-color: #17191e;
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100dvh;
   overflow: hidden;
+  font-size: 16px;
+}
+
+.search-section {
+  display: flex;
+  justify-content: space-around;
+  height: auto;
+  padding-top: 1rem;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.search-input {
+  height: 1.5rem;
+  border: none;
+  border-radius: 20px;
+  display: none;
+}
+
+.search-btn {
+  background-color: transparent;
+  width: 2.1rem;
+  height: 1.7rem;
+  border: none;
+}
+
+.location {
+  display: flex;
+  color: white;
+  text-align: center;
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  align-items: center;
+}
+
+.location-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 3px;
+}
+
+.settings-container > button {
+  padding: 0;
+  width: 50px;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  margin: 0;
+}
+
+.c-degree {
+  background-color: transparent;
+  color: aliceblue;
+}
+
+.f-degree {
+  background-color: white;
+  color: black;
 }
