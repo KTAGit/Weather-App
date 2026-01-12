@@ -187,3 +187,83 @@ form {
 .wind-data {
   color: #ffffff;
 }
+
+.upcoming-weather-section {
+  max-width: 100%;
+}
+
+.days-container {
+  display: flex;
+  max-width: calc(90px * 4);
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: auto;
+  touch-action: pan-x;
+}
+
+/* For WebKit browsers (Chrome, Safari, Opera) */
+.days-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge, and Firefox */
+.days-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.day {
+  display: flex;
+  width: 80px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #212328;
+  margin-top: 20px;
+  border-radius: 30px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.day > img {
+  width: 30px;
+  height: 30px;
+}
+
+.day > p {
+  margin: 0;
+}
+
+.current-temp {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding-left: 10px;
+}
+
+.upcoming-temp {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding-left: 10px;
+}
+
+.current-day {
+  color: #babfc3;
+  font-family: "Poppins", sans-serif;
+}
+
+.day-name {
+  color: #babfc3;
+  font-family: "Poppins", sans-serif;
+}
+
+.day > p > .degree-symbol {
+  margin: 0;
+  position: relative;
+  font-size: 0.9rem;
+  left: -5px;
+  top: 4px;
+}
