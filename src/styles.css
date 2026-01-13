@@ -24,9 +24,11 @@ form {
 }
 
 .search-input {
+  text-indent: 10px;
   height: 1.5rem;
   border: none;
   border-radius: 20px;
+  font-family: "Poppins", sans-serif;
   display: none;
 }
 
@@ -54,7 +56,18 @@ form {
   margin-right: 3px;
 }
 
-.settings-container > button {
+.settings-container {
+  display: flex;
+}
+
+.degree-buttons {
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 10px;
+}
+
+.degree-buttons > button {
   padding: 0;
   width: 50px;
   border-radius: 5px;
@@ -63,7 +76,6 @@ form {
   font-weight: 500;
   border: none;
   margin: 0;
-  display: none;
 }
 
 .settings-container > img {
@@ -79,9 +91,6 @@ form {
 .f-degree {
   background-color: white;
   color: black;
-}
-
-.current-weather-section {
 }
 
 .weather-icon-container {

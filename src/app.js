@@ -1,14 +1,12 @@
-// const weatherData = getWeatherData("London");
-
 // Fetches weather data for a given location from the Visual Crossing API
-async function getWeatherData(location) {
+export async function getWeatherData(location) {
   try {
-    // const weatherData = await fetch(
-    //   `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?include=current&unitGroup=metric&key=2UCL7UM4ZGHZDC4D46EL25MPM&contentType=json`
-    // );
+    const weatherData = await fetch(
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?include=current&unitGroup=metric&key=2UCL7UM4ZGHZDC4D46EL25MPM&contentType=json`
+    );
     const data = await weatherData.json();
 
-    return data;
+    getRequiredCurrentData(data);
   } catch {
     console.log("ERROR");
     throw new Error();
@@ -42,8 +40,8 @@ class CreateWeatherObject {
 
 // Extracts current weather conditions from fetched data
 // and creates a simplified weather object for display
-async function getRequiredCurrentData() {
-  const objData = await weatherData;
+async function getRequiredCurrentData(data) {
+  const objData = await data;
   const currentConditions = objData.currentConditions;
 
   console.log(currentConditions);
@@ -61,5 +59,3 @@ async function getRequiredCurrentData() {
   );
   console.log(currentWeatherObject);
 }
-
-// getRequiredCurrentData();
