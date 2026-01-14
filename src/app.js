@@ -1,8 +1,12 @@
+import { updateAllRequiredData } from "./controller/controller";
+
+export let weatherDataStorage = null;
+
 // Fetches weather data for a given location from the Visual Crossing API
 export async function getWeatherData(location) {
   try {
     const weatherData = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?include=current&unitGroup=metric&key=2UCL7UM4ZGHZDC4D46EL25MPM&contentType=json`
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?include=current&unitGroup=us&key=2UCL7UM4ZGHZDC4D46EL25MPM&contentType=json`
     );
     const data = await weatherData.json();
 
@@ -24,7 +28,8 @@ class CreateWeatherObject {
     datetime,
     windgust,
     location,
-    icon
+    icon,
+    precip
   ) {
     this.temp = temp;
     this.feelslike = feelslike;
@@ -35,6 +40,7 @@ class CreateWeatherObject {
     this.windgust = windgust;
     this.location = location;
     this.icon = icon;
+    this.precip = precip;
   }
 }
 
@@ -55,7 +61,11 @@ async function getRequiredCurrentData(data) {
     null,
     currentConditions.windgust,
     objData.resolvedAddress,
-    currentConditions.icon
+    currentConditions.icon,
+    currentConditions.precip
   );
-  console.log(currentWeatherObject);
+
+  weatherDataStorage = currentWeatherObject;
+  console.log(weatherDataStorage);
+  updateAllRequiredData();
 }

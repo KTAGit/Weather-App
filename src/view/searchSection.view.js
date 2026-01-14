@@ -28,3 +28,8 @@ export function selectTempSetting(temp) {
     }
   });
 }
+
+export function renderLocation(locationName) {
+  const location = document.querySelector(".locationName");
+  location.textContent = locationName;
+}
