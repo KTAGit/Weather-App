@@ -1,6 +1,7 @@
 import { updateAllRequiredData } from "./controller/controller";
 
-export let weatherDataStorage = null;
+export let currentWeatherDataStorage = null;
+export let forecastWeatherDataStorage = null;
 
 // Fetches weather data for a given location from the Visual Crossing API
 export async function getWeatherData(location) {
@@ -49,8 +50,9 @@ class CreateWeatherObject {
 async function getRequiredCurrentData(data) {
   const objData = await data;
   const currentConditions = objData.currentConditions;
+  const forecast = objData.days.slice(0, 7);
 
-  console.log(currentConditions);
+  //console.log(objData);
 
   const currentWeatherObject = new CreateWeatherObject(
     currentConditions.temp,
@@ -65,7 +67,8 @@ async function getRequiredCurrentData(data) {
     currentConditions.precip
   );
 
-  weatherDataStorage = currentWeatherObject;
-  console.log(weatherDataStorage);
+  currentWeatherDataStorage = currentWeatherObject;
+  forecastWeatherDataStorage = forecast;
+  console.log(forecast);
   updateAllRequiredData();
 }

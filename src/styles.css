@@ -15,6 +15,7 @@ body {
   height: auto;
   padding-top: 1rem;
   align-items: center;
+  position: relative;
 }
 
 form {
@@ -67,11 +68,16 @@ form {
   display: flex;
 }
 
+.settings-wrapper {
+  position: relative;
+}
+
 .degree-buttons {
   display: none;
-  position: fixed;
-  top: 60px;
-  right: 10px;
+  position: absolute;
+  top: 40px;
+  right: -50px;
+  width: 120px;
 }
 
 .degree-buttons > button {
@@ -124,7 +130,7 @@ form {
   margin: 0;
   font-size: 8rem;
   font-family: "Archivo", sans-serif;
-  line-height: 0.7;
+  line-height: 0.4;
   filter: drop-shadow(0 0px 100px rgba(255, 255, 255, 0.467));
   margin-right: 20px;
 }
@@ -134,7 +140,7 @@ form {
   font-size: 2.5rem;
   color: white;
   margin-left: 145px;
-  margin-top: -10px;
+  margin-top: -30px;
 }
 
 .weather-condition {
@@ -143,7 +149,7 @@ form {
   margin: 0;
   font-size: 2rem;
   font-family: "Archivo", sans-serif;
-  margin-top: 15px;
+  margin-top: 25px;
   margin-right: 20px;
 }
 
@@ -213,11 +219,12 @@ form {
 
 .days-container {
   display: flex;
-  max-width: calc(90px * 4);
+  max-width: calc(92px * 4);
   margin-left: auto;
   margin-right: auto;
   overflow-x: auto;
   touch-action: pan-x;
+  padding-bottom: 10px;
 }
 
 /* For WebKit browsers (Chrome, Safari, Opera) */
@@ -246,31 +253,26 @@ form {
   margin-left: 5px;
   padding-top: 15px;
   padding-bottom: 15px;
+  border: solid 1px #babfc32d;
 }
 
 .day > img {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
 }
 
 .day > p {
   margin: 0;
 }
 
-.current-temp {
+.day > .upcoming-temp {
   color: white;
   font-family: "Poppins", sans-serif;
-  padding-left: 10px;
-}
-
-.upcoming-temp {
-  color: white;
-  font-family: "Poppins", sans-serif;
-  padding-left: 10px;
+  margin-bottom: 5px;
 }
 
 .current-day {
-  color: #babfc3;
+  color: #ffffff;
   font-family: "Poppins", sans-serif;
 }
 
@@ -279,10 +281,11 @@ form {
   font-family: "Poppins", sans-serif;
 }
 
-.day > p > .degree-symbol {
+.day > .degree-symbol {
   margin: 0;
   position: relative;
   font-size: 0.9rem;
-  left: -5px;
-  top: 4px;
+  color: white;
+  margin-left: 27px;
+  margin-top: -27px;
 }
