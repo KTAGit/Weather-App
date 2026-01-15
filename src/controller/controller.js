@@ -144,12 +144,14 @@ export function getWeekdayNames() {
 
 // Extracts temperature and icon data from forecast storage and triggers forecast rendering
 function getForecastData() {
-  const forecastTemp = [];
+  const lowForecastTemp = [];
+  const highForecastTemp = [];
   const forecastIcon = [];
   for (let i = 0; i < forecastWeatherDataStorage.length; i++) {
-    forecastTemp.push(Math.round(forecastWeatherDataStorage[i].temp));
+    lowForecastTemp.push(Math.round(forecastWeatherDataStorage[i].tempmin));
+    highForecastTemp.push(Math.round(forecastWeatherDataStorage[i].tempmax));
     forecastIcon.push(forecastWeatherDataStorage[i].icon);
   }
-  renderForecastTemp(forecastTemp);
+  renderForecastTemp(lowForecastTemp, highForecastTemp);
   renderForecastIcon(forecastIcon);
 }

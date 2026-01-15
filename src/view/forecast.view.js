@@ -2,11 +2,17 @@ import { getWeekdayNames } from "../controller/controller";
 import { weatherIcons } from "../controller/weatherIcons";
 
 // Renders forecast temperature values into the corresponding DOM elements
-export function renderForecastTemp(tempData) {
-  const forecastTemp = document.querySelectorAll(".day > .upcoming-temp");
-  tempData.forEach((temp, index) => {
-    if (forecastTemp[index]) {
-      forecastTemp[index].textContent = temp;
+export function renderForecastTemp(lowTemp, highTemp) {
+  const lowForecastTemp = document.querySelectorAll(".low.upcoming-temp");
+  const highForecastTemp = document.querySelectorAll(".high.upcoming-temp");
+  lowTemp.forEach((lowTemp, index) => {
+    if (lowForecastTemp[index]) {
+      lowForecastTemp[index].textContent = lowTemp;
+    }
+  });
+  highTemp.forEach((highTemp, index) => {
+    if (highForecastTemp[index]) {
+      highForecastTemp[index].textContent = highTemp;
     }
   });
 }

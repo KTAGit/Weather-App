@@ -4,7 +4,6 @@ import { location } from "./controller/controller";
 
 export let currentWeatherDataStorage = null;
 export let forecastWeatherDataStorage = null;
-let unitGroup = changeTempUnit();
 
 // Fetches weather data for a given location from the Visual Crossing API
 export async function getWeatherData() {

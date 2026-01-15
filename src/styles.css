@@ -251,7 +251,7 @@ form {
   border-radius: 30px;
   margin-right: 5px;
   margin-left: 5px;
-  padding-top: 15px;
+  padding-top: 5px;
   padding-bottom: 15px;
   border: solid 1px #babfc32d;
 }
@@ -265,10 +265,16 @@ form {
   margin: 0;
 }
 
-.day > .upcoming-temp {
+.day > .temp-wrapper > div > .upcoming-temp {
   color: white;
   font-family: "Poppins", sans-serif;
   margin-bottom: 5px;
+}
+
+.temp-wrapper {
+  display: flex;
+  height: 35px;
+  margin-left: 5px;
 }
 
 .current-day {
@@ -281,11 +287,24 @@ form {
   font-family: "Poppins", sans-serif;
 }
 
-.day > .degree-symbol {
+.day > .temp-wrapper > div > .degree-symbol {
   margin: 0;
   position: relative;
   font-size: 0.9rem;
   color: white;
-  margin-left: 27px;
-  margin-top: -27px;
+  top: 17px;
+  left: -1px;
+}
+
+.day > .temp-wrapper > p {
+  margin: 0;
+  color: white;
+  margin-right: 4px;
+  margin-top: 17px;
+  font-family: "Archivo", sans-serif;
+  align-content: center;
+}
+
+.day > .temp-wrapper > div {
+  display: flex;
 }
