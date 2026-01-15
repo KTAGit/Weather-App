@@ -17,6 +17,7 @@ import { renderDayNames } from "../view/forecast.view";
 
 // Stores the currently selected temperature unit ("c" or "f")
 export let currentTempSetting = "F";
+export let location = null;
 
 // Select DOM elements
 const searchBtn = document.querySelector(".search-btn");
@@ -29,7 +30,8 @@ function handleSearch() {
   const inputValue = searchInput.value.trim();
   if (inputValue === "") return;
 
-  getWeatherData(inputValue);
+  location = inputValue;
+  getWeatherData();
   searchInput.value = "";
 }
 
@@ -48,8 +50,20 @@ tempSettings.forEach((btn) => {
     currentTempSetting = btn.dataset.unit;
     selectTempSetting(currentTempSetting);
     toggleSettingsVisibility();
+    changeTempUnit();
+    getWeatherData();
+    updateAllRequiredData();
   });
 });
+
+// Returns the API temperature unit based on the current temperature setting
+export function changeTempUnit() {
+  if (currentTempSetting === "C") {
+    return "metric";
+  } else {
+    return "us";
+  }
+}
 
 // Updates all UI elements that depend on the current weather data
 export function updateAllRequiredData() {
@@ -125,7 +139,6 @@ export function getWeekdayNames() {
 
     days.push(date.toLocaleDateString("en-us", { weekday: "short" }));
   }
-  console.log(days);
   return days;
 }
 
@@ -137,8 +150,6 @@ function getForecastData() {
     forecastTemp.push(Math.round(forecastWeatherDataStorage[i].temp));
     forecastIcon.push(forecastWeatherDataStorage[i].icon);
   }
-  console.log(forecastIcon);
-  console.log(forecastTemp);
   renderForecastTemp(forecastTemp);
   renderForecastIcon(forecastIcon);
 }

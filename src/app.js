@@ -1,13 +1,16 @@
 import { updateAllRequiredData } from "./controller/controller";
+import { changeTempUnit } from "./controller/controller";
+import { location } from "./controller/controller";
 
 export let currentWeatherDataStorage = null;
 export let forecastWeatherDataStorage = null;
+let unitGroup = changeTempUnit();
 
 // Fetches weather data for a given location from the Visual Crossing API
-export async function getWeatherData(location) {
+export async function getWeatherData() {
   try {
     const weatherData = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?include=current&unitGroup=us&key=2UCL7UM4ZGHZDC4D46EL25MPM&contentType=json`
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?include=current&unitGroup=${changeTempUnit()}&key=2UCL7UM4ZGHZDC4D46EL25MPM&contentType=json`
     );
     const data = await weatherData.json();
 

@@ -3,7 +3,7 @@ export function toggleSearchInput() {
   const searchInput = document.querySelector(".search-input");
 
   searchInput.style.display === "none"
-    ? (searchInput.style.display = "block")
+    ? ((searchInput.style.display = "block"), searchInput.focus())
     : (searchInput.style.display = "none");
 }
 
@@ -15,6 +15,7 @@ export function toggleSettingsVisibility() {
     : (degreeBtns.style.display = "none");
 }
 
+// Highlights the selected temperature unit button and resets the others
 export function selectTempSetting(temp) {
   const buttons = document.querySelectorAll(".degree-buttons > button");
 
@@ -29,6 +30,7 @@ export function selectTempSetting(temp) {
   });
 }
 
+// Updates the displayed location name in the UI
 export function renderLocation(locationName) {
   const location = document.querySelector(".locationName");
   location.textContent = locationName;

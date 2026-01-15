@@ -1,3 +1,4 @@
+import { currentTempSetting } from "../controller/controller";
 import { weatherIcons } from "../controller/weatherIcons";
 
 // Renders the weather icon based on the provided icon name
@@ -21,7 +22,9 @@ export function renderWeatherCondition(condition) {
 // Renders the wind gust speed
 export function renderWindData(windgust) {
   const windDataEl = document.querySelector(".wind-data");
-  windDataEl.textContent = `${Math.round(windgust)} mph`;
+  currentTempSetting === "C"
+    ? (windDataEl.textContent = `${Math.round(windgust)} km/h`)
+    : (windDataEl.textContent = `${Math.round(windgust)} mph`);
 }
 
 // Renders the humidity percentage
