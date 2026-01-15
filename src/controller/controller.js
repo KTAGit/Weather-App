@@ -17,7 +17,8 @@ import { renderDayNames } from "../view/forecast.view";
 
 // Stores the currently selected temperature unit ("c" or "f")
 export let currentTempSetting = "F";
-export let location = null;
+export let location =
+  JSON.parse(localStorage.getItem("location-data")) ?? "New York NY";
 
 // Select DOM elements
 const searchBtn = document.querySelector(".search-btn");
@@ -32,6 +33,7 @@ function handleSearch() {
 
   location = inputValue;
   getWeatherData();
+  localStorage.setItem("location-data", JSON.stringify(location));
   searchInput.value = "";
 }
 
