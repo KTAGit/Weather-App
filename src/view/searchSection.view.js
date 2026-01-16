@@ -35,3 +35,14 @@ export function renderLocation(locationName) {
   const location = document.querySelector(".locationName");
   location.textContent = locationName;
 }
+
+// Displays an error message to the user for a short duration,
+export function showErrorMessage(message) {
+  const errorEl = document.querySelector(".error");
+  document.querySelector(".err-message").textContent = message;
+  errorEl.style.display = "flex";
+
+  setTimeout(() => {
+    errorEl.style.display = "none";
+  }, 4000);
+}

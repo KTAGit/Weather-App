@@ -1,30 +1,37 @@
 import { updateAllRequiredData } from "./controller/controller";
 import { changeTempUnit } from "./controller/controller";
 import { location } from "./controller/controller";
+import { showErrorMessage } from "./view/searchSection.view";
 
 export let currentWeatherDataStorage = null;
 export let forecastWeatherDataStorage = null;
 
 // Fetches weather data for a given location from the Visual Crossing API
 export async function getWeatherData() {
+  const response = await fetch(
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?include=current&unitGroup=${changeTempUnit()}&key=2UCL7UM4ZGHZDC4D46EL25MPM&contentType=json`
+  );
+  if (!response.ok) {
+    throw new Error(`HTTP error: ${response.status}`);
+  }
+  return response.json();
+}
+
+// If the location is invalid, shows an error and reverts to the default location.
+export async function hundleSearch() {
   try {
-    const response = await fetch(
-      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?include=current&unitGroup=${changeTempUnit()}&key=2UCL7UM4ZGHZDC4D46EL25MPM&contentType=json`
-    );
-    if (!response.ok) {
-      throw new Error(`HTTP error: ${response.status}`);
-    }
-    const data = await response.json();
+    const data = await getWeatherData();
+
+    localStorage.setItem("location-data", JSON.stringify(location));
+
     getRequiredCurrentData(data);
-  } catch (error) {
-    console.error("getWeatherData faild:", error);
-    throw Error();
+  } catch {
+    showErrorMessage(" Location not recognized");
+    getWeatherData();
   }
 }
 
-getWeatherData().catch((error) => {
-  console.error("ERROR", error.message);
-});
+hundleSearch();
 
 // Weather data model containing only the fields required by the UI
 class CreateWeatherObject {

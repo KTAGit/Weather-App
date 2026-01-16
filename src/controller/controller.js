@@ -14,6 +14,7 @@ import { forecastWeatherDataStorage } from "../app";
 import { renderForecastTemp } from "../view/forecast.view";
 import { renderForecastIcon } from "../view/forecast.view";
 import { renderDayNames } from "../view/forecast.view";
+import { hundleSearch } from "../app";
 
 // Stores the currently selected temperature unit ("c" or "f")
 export let currentTempSetting = "F";
@@ -32,8 +33,8 @@ function handleSearch() {
   if (inputValue === "") return;
 
   location = inputValue;
-  getWeatherData();
-  localStorage.setItem("location-data", JSON.stringify(location));
+  hundleSearch();
+
   searchInput.value = "";
 }
 
