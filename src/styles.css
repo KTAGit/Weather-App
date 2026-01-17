@@ -1,6 +1,6 @@
 html,
 body {
-  background-color: #17191e;
+  background-color: #060a2e;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -116,6 +116,7 @@ form {
   height: 18rem;
   width: 21rem;
   filter: drop-shadow(0 0px 100px rgba(255, 255, 255, 0.467));
+  object-fit: cover;
 }
 
 .temp-data-container {
@@ -161,7 +162,7 @@ form {
   justify-content: space-around;
   margin-left: auto;
   margin-right: auto;
-  background-color: #212328;
+  background-color: #1d1d4a;
   border-radius: 30px;
   align-items: center;
 }
@@ -181,7 +182,6 @@ form {
 .weather-data-container > div > img {
   width: 30px;
   height: 30px;
-  filter: drop-shadow(0 0px 10px rgba(255, 255, 255, 0.253));
 }
 
 .divider {
@@ -246,7 +246,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #212328;
+  background-color: #1d1d4a;
   margin-top: 20px;
   border-radius: 30px;
   margin-right: 5px;

@@ -54,7 +54,7 @@ tempSettings.forEach((btn) => {
     selectTempSetting(currentTempSetting);
     toggleSettingsVisibility();
     changeTempUnit();
-    getWeatherData();
+    hundleSearch();
     updateAllRequiredData();
   });
 });
