@@ -362,6 +362,22 @@ form {
     margin-right: 10px;
     margin-left: 10px;
   }
+
+  .search-btn:hover {
+    cursor: pointer;
+  }
+
+  .settings-container:hover {
+    cursor: pointer;
+  }
+
+  .c-degree:hover {
+    cursor: pointer;
+  }
+
+  .f-degree:hover {
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 1900px) {
