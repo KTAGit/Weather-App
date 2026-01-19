@@ -55,6 +55,7 @@ form {
   width: 1.6rem;
   height: 1.6rem;
   margin-right: 3px;
+  color: #a2dcff;
 }
 
 .locationName {
@@ -62,6 +63,7 @@ form {
   max-width: fit-content;
   max-height: 40px;
   overflow: hidden;
+  color: white;
 }
 
 .settings-container {
@@ -133,15 +135,18 @@ form {
   font-family: "Archivo", sans-serif;
   line-height: 0.4;
   filter: drop-shadow(0 0px 100px rgba(255, 255, 255, 0.467));
-  margin-right: 20px;
+  height: fit-content;
 }
 
-.temp-data-container > .degree-symbol {
-  position: absolute;
+.main-temp-wrapper {
+  display: flex;
+  max-height: fit-content;
+}
+
+.main-temp-wrapper > .degree-symbol {
   font-size: 2.5rem;
   color: white;
-  margin-left: 145px;
-  margin-top: -30px;
+  margin-top: -27px;
 }
 
 .weather-condition {
@@ -150,7 +155,7 @@ form {
   margin: 0;
   font-size: 2rem;
   font-family: "Archivo", sans-serif;
-  margin-top: 25px;
+  margin-top: 35px;
   margin-right: 20px;
 }
 
