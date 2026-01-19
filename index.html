@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather App</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <section class="search-section">
+      <form action="#">
+        <input
+          type="text"
+          placeholder="Search for a city"
+          class="search-input"
+        />
+        <button type="submit" class="search-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            fill="white"
+            version="1.1"
+            viewBox="0 0 512 512"
+          >
+            <g>
+              <path
+                d="m495,466.1l-110.1-110.1c31.1-37.7 48-84.6 48-134 0-56.4-21.9-109.3-61.8-149.2-39.8-39.9-92.8-61.8-149.1-61.8-56.3,0-109.3,21.9-149.2,61.8-39.9,39.8-61.8,92.8-61.8,149.2 0,56.3 21.9,109.3 61.8,149.2 39.8,39.8 92.8,61.8 149.2,61.8 49.5,0 96.4-16.9 134-48l110.1,110c8,8 20.9,8 28.9,0 8-8 8-20.9 0-28.9zm-393.3-123.9c-32.2-32.1-49.9-74.8-49.9-120.2 0-45.4 17.7-88.2 49.8-120.3 32.1-32.1 74.8-49.8 120.3-49.8 45.4,0 88.2,17.7 120.3,49.8 32.1,32.1 49.8,74.8 49.8,120.3 0,45.4-17.7,88.2-49.8,120.3-32.1,32.1-74.9,49.8-120.3,49.8-45.4,0-88.1-17.7-120.2-49.9z"
+              />
+            </g>
+          </svg>
+        </button>
+      </form>
+      <div class="location">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="16 0 68 100"
+          class="location-icon"
+        >
+          <path
+            d="M50,0c-18.706,0-33.871,15.165-33.871,33.87
+       c0,0.401,0.012,0.809,0.03,1.221
+       c0.127,3.558,0.798,6.975,1.939,10.172
+       c7.226,23.752,31.902,54.737,31.902,54.737
+       s24.673-30.982,31.9-54.734
+       c1.143-3.197,1.813-6.617,1.939-10.175
+       c0.02-0.412,0.031-0.819,0.031-1.221
+       c0-18.705-15.164-33.87-33.87-33.87z
+       M50,50.459
+       c-9.161,0-16.589-7.428-16.589-16.589
+       c0-9.16,7.428-16.588,16.589-16.588
+       c9.162,0,16.589,7.428,16.589,16.588
+       c0,9.161-7.427,16.589-16.589,16.589z"
+            fill="currentColor"
+          />
+        </svg>
+        <p class="locationName">London</p>
+      </div>
+
+      <div class="settings-wrapper">
+        <div class="settings-container">
+          <img src="125b08a68edc7fddefa2.svg" alt="" />
+        </div>
+        <div class="degree-buttons">
+          <button class="c-degree" data-unit="C">°C</button>
+          <button class="f-degree" data-unit="F">°F</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="current-weather-section">
+      <div class="weather-icon-container">
+        <img
+          class="weather-icon"
+          src="0aeb57f1c2385eabaea7.png"
+          alt=""
+        />
+      </div>
+      <div class="temp-data-container">
+        <div class="main-temp-wrapper">
+          <h1 class="temp">27</h1>
+          <sup class="degree-symbol">°</sup>
+        </div>
+
+        <p class="weather-condition">Thunderclouds</p>
+      </div>
+      <div class="weather-data-container">
+        <div class="wind-container">
+          <img
+            src="5e472e22f19ea1ce1169.png"
+            alt="wind-icon"
+          />
+          <p class="wind-data">13 mph</p>
+          <p class="wind-label">Wind</p>
+        </div>
+        <span class="divider"></span>
+        <div class="humidity-container">
+          <img
+            src="3143aff758df96ddab29.png"
+            alt="humidity-icon"
+          />
+          <p class="humidity-data">24%</p>
+          <p class="humidity-label">Humidity</p>
+        </div>
+        <span class="divider"></span>
+        <div class="rain-container">
+          <img
+            src="574c512cd667f76c01b8.png"
+            alt="rain-icon"
+          />
+          <p class="rain-data">87%</p>
+          <p class="rain-label">Rain</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="upcoming-weather-section">
+      <div class="days-container">
+        <div class="day">
+          <div class="temp-wrapper">
+            <div>
+              <p class="low upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+            <p>-</p>
+            <div>
+              <p class="high upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+          </div>
+
+          <img
+            src="574c512cd667f76c01b8.png"
+            alt="weather-icon"
+          />
+          <p class="current-day">Today</p>
+        </div>
+        <div class="day">
+          <div class="temp-wrapper">
+            <div>
+              <p class="low upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+            <p>-</p>
+            <div>
+              <p class="high upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+          </div>
+          <img
+            src="574c512cd667f76c01b8.png"
+            alt="weather-icon"
+          />
+          <p class="day-name">Tue</p>
+        </div>
+        <div class="day">
+          <div class="temp-wrapper">
+            <div>
+              <p class="low upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+            <p>-</p>
+            <div>
+              <p class="high upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+          </div>
+          <img
+            src="574c512cd667f76c01b8.png"
+            alt="weather-icon"
+          />
+          <p class="day-name">Wed</p>
+        </div>
+        <div class="day">
+          <div class="temp-wrapper">
+            <div>
+              <p class="low upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+            <p>-</p>
+            <div>
+              <p class="high upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+          </div>
+          <img
+            src="574c512cd667f76c01b8.png"
+            alt="weather-icon"
+          />
+          <p class="day-name">Thu</p>
+        </div>
+        <div class="day">
+          <div class="temp-wrapper">
+            <div>
+              <p class="low upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+            <p>-</p>
+            <div>
+              <p class="high upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+          </div>
+          <img
+            src="574c512cd667f76c01b8.png"
+            alt="weather-icon"
+          />
+          <p class="day-name">Fri</p>
+        </div>
+        <div class="day">
+          <div class="temp-wrapper">
+            <div>
+              <p class="low upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+            <p>-</p>
+            <div>
+              <p class="high upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+          </div>
+          <img
+            src="574c512cd667f76c01b8.png"
+            alt="weather-icon"
+          />
+          <p class="day-name">Sat</p>
+        </div>
+        <div class="day">
+          <div class="temp-wrapper">
+            <div>
+              <p class="low upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+            <p>-</p>
+            <div>
+              <p class="high upcoming-temp">23</p>
+              <sup class="degree-symbol">°</sup>
+            </div>
+          </div>
+          <img
+            src="574c512cd667f76c01b8.png"
+            alt="weather-icon"
+          />
+          <p class="day-name">Sun</p>
+        </div>
+      </div>
+    </section>
+    <div class="error" style="display: none">
+      <div class="symbol">🚫</div>
+      <div class="err-message"></div>
+    </div>
+  </body>
+</html>
