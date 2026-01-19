@@ -232,15 +232,17 @@ form {
   padding-bottom: 10px;
 }
 
-/* For WebKit browsers (Chrome, Safari, Opera) */
-.days-container::-webkit-scrollbar {
-  display: none;
-}
+@media (max-width: 729px) {
+  /* For WebKit browsers (Chrome, Safari, Opera) */
+  .days-container::-webkit-scrollbar {
+    display: none;
+  }
 
-/* For IE, Edge, and Firefox */
-.days-container {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* For IE, Edge, and Firefox */
+  .days-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 .day {
@@ -343,4 +345,27 @@ form {
 .err-message {
   text-indent: 5px;
   white-space: nowrap;
+}
+
+@media (min-width: 730px) {
+  .days-container {
+    display: flex;
+    max-width: 70%;
+    scroll-behavior: smooth;
+    overflow: auto;
+  }
+
+  .day {
+    display: flex;
+    width: 10rem;
+    height: 10rem;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .days-container {
+    justify-content: center;
+  }
 }
